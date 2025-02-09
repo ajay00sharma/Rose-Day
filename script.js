@@ -1,8 +1,10 @@
-let path = window.location.pathname;
+ function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        let name = getQueryParam("name");
 
-let name = path.substring(path.lastIndexOf("/") + 1);
-
-if (name && name !== "https://ajay00sharma.github.io/Rose-Day/") {
+  if (name) {
   name = name.charAt(0).toUpperCase() + name.slice(1);
   document.getElementById("nametag").innerText = "By Your one and only " + name + "✨";
 } else {
